@@ -1,0 +1,50 @@
+Minuta 01 – Preparación del entorno de trabajo
+
+    Fecha: 07-09-2026
+    Proyecto: Evaluación 1
+    Tipo de reunión: Configuración inicial y pruebas
+    
+    Participantes:
+    -Cristian Grandon Grandon
+    -Jorge Gutierres Jaramillo
+    -Vicente Aguilar Rojas
+    -Felipe Palma Barrientos
+
+1. Objetivo de la reunión
+-Preparar el entorno de trabajo necesario para desarrollar la Evaluación 1, dejando configuradas las herramientas de control de versiones y el entorno de Visual Studio Code.
+
+2. Actividades realizadas
+-Creacion de espacio en Drive para la realizacion del informe.
+-Instalación y configuración de Git.
+-Configuración de GitHub para trabajar con el repositorio del proyecto.
+-Preparación de Visual Studio Code como entorno principal de trabajo.
+-Instalación de las extensiones necesarias para el desarrollo de la Evaluación 1.
+-Validación del acceso y funcionamiento del repositorio.
+-Pruebas iniciales de edición sobre el archivo README.md.
+-Revisión del flujo básico de trabajo con archivos versionados.
+
+3. Pruebas realizadas
+-Se realizaron modificaciones de prueba sobre el archivo README.md con el objetivo de comprobar que el entorno de trabajo estuviera correctamente configurado y preparado para comenzar el desarrollo de la evaluación.
+
+4. Resultados
+-Entorno de desarrollo preparado.
+-Git disponible para el control de versiones.
+-Repositorio de GitHub disponible para el trabajo del equipo.
+-Visual Studio Code configurado con las extensiones requeridas.
+-Archivo README.md utilizado correctamente para las primeras pruebas.
+
+5. Acuerdos
+-Utilizar GitHub como repositorio central del proyecto.
+-Trabajar principalmente desde Visual Studio Code.
+-Mantener documentación relevante dentro del repositorio.
+-Registrar las reuniones del equipo mediante archivos de minuta.
+
+6. Pendientes para la próxima reunión
+
+Investigar y definir,
+    Data Set
+    Problematica
+Definir responsabilidades para el desarrollo del proyecto
+Data Sets propuestos
+    IPC
+    Mneduc
