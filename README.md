@@ -19,4 +19,5 @@ Este proyecto evalúa el impacto del diseño algorítmico ($\mathcal{O}(N^2)$ vs
 1. **Clonar el repositorio:**
    ```bash
    git clone [https://github.com/tu-usuario/f1_s01_evaluacion_entregable_grupox.git](https://github.com/tu-usuario/f1_s01_evaluacion_entregable_grupox.git)
-   cd f1_s01_evaluacion_entregable_grupox
+   cd f1_s01_evaluacion_entregable_grupox ctr + s
+   
