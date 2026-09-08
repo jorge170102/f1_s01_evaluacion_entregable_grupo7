@@ -1,0 +1,12 @@
+name: entorno_benchmark_hardware
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pandas>=2.0.0
+  - numpy>=1.24.0
+  - matplotlib>=3.7.0
+  - seaborn>=0.12.0
+  - jupyter>=1.0.0
+  - pip
