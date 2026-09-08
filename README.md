@@ -1,9 +1,9 @@
 # Evaluación Sumativa 1: Optimización Algorítmica y Análisis de Costos de Hardware
 
 **Curso:** Ciencia de Datos e Inteligencia Artificial  
-**Grupo:** Grupo X  
-**Integrantes:** [Nombre 1], [Nombre 2], [Nombre 3], [Nombre 4]  
-**Docente:** [Nombre del Docente]  
+**Grupo:** Grupo 7
+**Integrantes:** Felipe, Vicente, Cristian, Jorge
+**Docente:** Omar Salinas Silva
 
 ---
 
