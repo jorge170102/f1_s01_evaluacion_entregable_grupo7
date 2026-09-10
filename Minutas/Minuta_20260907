@@ -48,3 +48,9 @@ Definir responsabilidades para el desarrollo del proyecto
 Data Sets propuestos
     IPC
     Mneduc
+Sesion con el profesor
+-El mapa conceptual se debe basar en plantear la problematica y como afrontarla
+-Se decide que se usara el dataset de ipc pero con ciertos matices a investigar
+-La F1 consta de documentacion acerca de la problematica(informe)
+-La F2 es hacer el pipeline con el dataset enfocando en limpiar datos y transformarlos, preferiblemente datos str a numericos(evaluar)
+-Aun no se debe hacer graficos ni nada con los datos solo procesarlos en el pipeline y dejarlos listos para el machine learning(F3).
