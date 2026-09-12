@@ -1,0 +1,14 @@
+# Entorno virtual
+.venv/
+__pycache__/
+*.pyc
+
+# Checkpoints de Jupyter
+.ipynb_checkpoints/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Datos pesados
+data/raw/
