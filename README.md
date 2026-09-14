@@ -3,10 +3,10 @@
 **Grupo:** Grupo 7
 
 ## Integrantes
-- Felipe
-- Vicente
-- Cristian
-- Jorge
+- Felipe Palma
+- Vicente Aguila
+- Cristian Grandon
+- Jorge Gutierrez
 
 ## Datos
 - Dataset: Resultados prueba SIMCE 4º Básico 2025 por Establecimiento
@@ -31,11 +31,13 @@
 Python: 3.14.7
 
 ### Dependencias
-- pandas
-- numpy
-- matplotlib
-- seaborn
+- ipykernel
 - jupyterlab
+- matplotlib==3.11.1
+- notebook
+- numpy==2.5.2
+- pandas==3.0.5
+- seaborn==0.13.2
 
 ## Reproducibilidad
 
