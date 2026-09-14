@@ -1,0 +1,5 @@
+criterio,exigido,observado,cumple
+Mínimo de filas,2000.0,7143.0,sí
+Mínimo de columnas,12.0,42.0,sí
+Variables continuas,2.0,8.0,sí
+Presencia de nulos para preprocesar (≥1%),1.0,28.4,sí

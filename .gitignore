@@ -1,21 +1,14 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-
-# Entornos Virtuales
+# Entorno virtual
 .venv/
-venv/
-ENV/
-env/
+__pycache__/
+*.pyc
 
-# Jupyter Notebooks
+# Checkpoints de Jupyter
 .ipynb_checkpoints/
-*-checkpoint.ipynb
 
-# Archivos de sistema y logs
+# Archivos de sistema
 .DS_Store
-*.log
-*.tmp
+Thumbs.db
+
+# Datos pesados
+data/raw/

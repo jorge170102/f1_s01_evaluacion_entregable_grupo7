@@ -1,23 +1,46 @@
-# Evaluación Sumativa 1: Optimización Algorítmica y Análisis de Costos de Hardware
+# Caracterización e Inequidad en los Resultados Académicos del SIMCE 4º Básico en Chile
 
-**Curso:** Ciencia de Datos e Inteligencia Artificial  
 **Grupo:** Grupo 7
-**Integrantes:** Felipe, Vicente, Cristian, Jorge
-**Docente:** Omar Salinas Silva
 
----
+## Integrantes
+- Felipe
+- Vicente
+- Cristian
+- Jorge
 
-## 📋 Descripción del Proyecto
-Este proyecto evalúa el impacto del diseño algorítmico ($\mathcal{O}(N^2)$ vs $\mathcal{O}(N \log N)$) en la reducción del uso de CPU y costos de infraestructura. Demuestra de manera empírica que la optimización de software prevalece sobre el escalado vertical de hardware.
+## Datos
+- Dataset: Resultados prueba SIMCE 4º Básico 2025 por Establecimiento
+- Fuente: Agencia de Calidad de la Educación
+- Plataforma: Bases de datos públicas de la Agencia de Calidad de la Educación
+- Enlace: https://informacionestadistica.agenciaeducacion.cl/#/bases
+- Unidad de observación: Un establecimiento educacional (RBD)
+- Dimensiones: 7143 filas x 42 columnas
 
-## 📁 Estructura del Repositorio
-* `F1/`: Contiene `F1_Definición.ipynb` con la formulación técnica de la problemática, objetivos y validación del entorno.
-* `F2/`: Contiene `F2_Pipeline.ipynb`, los datasets crudos/procesados y el pipeline completo de preprocesamiento, pruebas de estrés y benchmarking.
-* `environment.yml`: Configuración del entorno reproducible.
+## Estructura del repositorio
 
-## 🚀 Guía de Ejecución
-1. **Clonar el repositorio:**
-   ```bash
-   git clone [https://github.com/tu-usuario/f1_s01_evaluacion_entregable_grupox.git](https://github.com/tu-usuario/f1_s01_evaluacion_entregable_grupox.git)
-   cd f1_s01_evaluacion_entregable_grupox otra cosa
-   actualizacion super final
+- `data/raw/`: datos originales sin modificar.
+- `data/processed/`: datos procesados en fases posteriores.
+- `docs/`: documentación y metadatos.
+- `src/`: módulos reutilizables.
+- `F1/`: definición y preparación del proyecto.
+- `F2/`: procesamiento de datos.
+- `F3/` y `F4/`: fases posteriores.
+
+## Requisitos
+
+Python: 3.14.7
+
+### Dependencias
+- numpy==2.5.2
+- pandas==3.0.5
+- matplotlib==3.11.1
+- seaborn==0.13.2
+- jupyterlab
+- notebook
+- ipykernel
+
+## Reproducibilidad
+
+La semilla utilizada durante el proyecto es `42`.
+
+Los datos originales no se modifican durante la Fase 1.

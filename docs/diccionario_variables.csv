@@ -1,0 +1,43 @@
+variable,rol_analitico,descripcion
+rbd,identificador,Rol Base de Datos del colegio
+dvrbd,identificador,Dígito verificador del RBD
+nom_rbd,alta_cardinalidad,Nombre oficial del establecimiento
+cod_reg_rbd,nominal,Código numérico de la región
+nom_reg_rbd,nominal,Nombre de la región geográfica
+cod_pro_rbd,nominal,Código numérico de la provincia
+nom_pro_rbd,nominal,Nombre de la provincia
+cod_com_rbd,identificador,Código de la comuna
+nom_com_rbd,nominal,Nombre de la comuna
+cod_deprov_rbd,nominal,Código departamento provincial
+nom_deprov_rbd,nominal,Nombre departamento provincial
+cod_depe1,nominal,Dependencia administrativa estructurada
+cod_depe2,nominal,"Dependencia agregada (Municipal, Subvencionado, Pagado, SLEP)"
+cod_grupo,ordinal,Grupo socioeconómico del colegio (1:Bajo a 5:Alto)
+cod_rural_rbd,nominal,"Categoría de ruralidad (1:Urbano, 2:Rural)"
+nalu_lect4b_rbd,discreta,Número de alumnos evaluados en Lectura
+nalu_mate4b_rbd,discreta,Número de alumnos evaluados en Matemática
+prom_lect4b_rbd,continua,Puntaje promedio SIMCE Lectura 4º Básico
+prom_mate4b_rbd,continua,Puntaje promedio SIMCE Matemática 4º Básico
+dif_lect4b_rbd,continua,Diferencia de puntaje Lectura respecto al año anterior
+dif_mate4b_rbd,continua,Diferencia de puntaje Matemática respecto al año anterior
+difgru_lect4b_rbd,continua,Diferencia de Lectura respecto a su grupo socioeconómico
+difgru_mate4b_rbd,continua,Diferencia de Matemática respecto a su grupo socioeconómico
+sigdif_lect4b_rbd,nominal,Significancia estadística de la diferencia en Lectura
+sigdif_mate4b_rbd,nominal,Significancia estadística de la diferencia en Matemática
+siggru_lect4b_rbd,nominal,Significancia de la diferencia respecto al grupo socioeconómico en Lectura
+siggru_mate4b_rbd,nominal,Significancia de la diferencia respecto al grupo socioeconómico en Matemática
+marca_lect4b_rbd,nominal,Marca de resguardo de calidad en Lectura
+marca_mate4b_rbd,nominal,Marca de resguardo de calidad en Matemática
+marcadif_lect4b_rbd,nominal,Marca de comparación histórica en Lectura
+marcadif_mate4b_rbd,nominal,Marca de comparación histórica en Matemática
+palu_eda_ins_lect4b_rbd,continua,Porcentaje de alumnos en Nivel Insuficiente (Lectura)
+palu_eda_ele_lect4b_rbd,continua,Porcentaje de alumnos en Nivel Elemental (Lectura)
+palu_eda_ade_lect4b_rbd,continua,Porcentaje de alumnos en Nivel Adecuado (Lectura)
+palu_eda_ins_mate4b_rbd,continua,Porcentaje de alumnos en Nivel Insuficiente (Matemática)
+palu_eda_ele_mate4b_rbd,continua,Porcentaje de alumnos en Nivel Elemental (Matemática)
+palu_eda_ade_mate4b_rbd,continua,Porcentaje de alumnos en Nivel Adecuado (Matemática)
+noaplica,binaria,Indicador de no aplicación del instrumento
+codigo_bbdd,nominal,Código de versión de la base de datos
+fecha_bbdd,fecha,Fecha de publicación de la base de datos
+grado,nominal,Grado evaluado (4b)
+agno,discreta,Año del proceso de evaluación (2025)

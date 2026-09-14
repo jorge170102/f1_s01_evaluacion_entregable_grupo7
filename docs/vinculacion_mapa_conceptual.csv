@@ -1,0 +1,9 @@
+nodo_mapa,donde_se_implementa,evidencia
+Entorno reproducible,F1 · verificar_entorno(),"Intérprete de Python, entorno virtual y versiones de librerías"
+Gestión de dependencias,F1 · requirements.txt,Archivo requirements.txt generado con las dependencias del proyecto
+Estructura del proyecto,F1 · creación de carpetas,"Carpetas data/raw, data/processed, docs, src y F1-F4"
+Fuente de datos,F1 · FICHA,Ficha del dataset SIMCE 4º Básico 2025 y fuente oficial
+Diccionario de variables,F1 · diccionario,42 variables documentadas con rol analítico y descripción
+Disponibilidad del dataset,F1 · ARCHIVO_RAW,Verificación de existencia y dimensiones del archivo SIMCE
+Control de versiones,F1 · diagnóstico Git,Versión de Git e historial reciente de commits
+Validación técnica,Sección 7 · validar_fase1(),"Comprobaciones automáticas de estructura, archivos y coherencia"
