@@ -14,7 +14,7 @@
 - Plataforma: Bases de datos públicas de la Agencia de Calidad de la Educación
 - Enlace: https://informacionestadistica.agenciaeducacion.cl/#/bases
 - Unidad de observación: Un establecimiento educacional (RBD)
-- Dimensiones: 7143 filas x 42 columnas
+- Dimensiones: 7,143 filas x 42 columnas
 
 ## Estructura del repositorio
 
@@ -31,13 +31,11 @@
 Python: 3.14.7
 
 ### Dependencias
-- numpy==2.5.2
-- pandas==3.0.5
-- matplotlib==3.11.1
-- seaborn==0.13.2
+- pandas
+- numpy
+- matplotlib
+- seaborn
 - jupyterlab
-- notebook
-- ipykernel
 
 ## Reproducibilidad
 
