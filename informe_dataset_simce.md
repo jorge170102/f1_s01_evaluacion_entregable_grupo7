@@ -67,4 +67,6 @@
 
 ## Resultado
 
-El conjunto **cumple** los requisitos mínimos.
+La tabla anterior corresponde al validador exploratorio. La ficha vigente se calcula desde el bruto en F1 y se guarda en docs/metadatos_fase1.json; el diccionario de docs define los roles del proyecto. El bruto conserva columnas con 92,93 % de ausentes. La tabla de criterios de F1 comprueba presencia de nulos, no un tope de 60 %.
+
+La tabla de roles de este informe es heurística. Para el proyecto usamos `docs/diccionario_variables.csv`: `noaplica` y el código de comuna son nominales, y los conteos de la ficha se calculan desde ese diccionario.

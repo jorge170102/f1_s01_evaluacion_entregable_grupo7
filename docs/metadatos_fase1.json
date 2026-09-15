@@ -2,12 +2,12 @@
   "proyecto": "Caracterización e Inequidad en los Resultados Académicos del SIMCE 4º Básico en Chile",
   "grupo": "Grupo 7",
   "fase": "F1",
-  "fecha_ejecucion": "2026-09-13",
+  "fecha_ejecucion": "2026-09-14",
   "semilla": 42,
   "python": "3.14.7",
   "sistema_operativo": "Windows 11",
-  "interprete": "c:\\Users\\jorge\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
-  "entorno_virtual": false,
+  "interprete": "C:\\Users\\jorge\\f1_s01_evaluacion_entregable_grupo7\\.venv\\Scripts\\python.exe",
+  "entorno_virtual": true,
   "dependencias": {
     "numpy": "2.5.2",
     "pandas": "3.0.5",
@@ -20,6 +20,17 @@
     "url": "https://informacionestadistica.agenciaeducacion.cl/#/bases",
     "filas": 7143,
     "columnas": 42,
-    "archivo_disponible": true
+    "archivo_disponible": true,
+    "roles": {
+      "nominal": 22,
+      "continua": 12,
+      "discreta": 3,
+      "identificador": 2,
+      "alta_cardinalidad": 1,
+      "ordinal": 1,
+      "fecha": 1
+    },
+    "pct_nulos_max_variable": 92.93014139717206,
+    "licencia_abierta": null
   }
 }

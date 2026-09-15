@@ -6,7 +6,7 @@ cod_reg_rbd,nominal,Código numérico de la región
 nom_reg_rbd,nominal,Nombre de la región geográfica
 cod_pro_rbd,nominal,Código numérico de la provincia
 nom_pro_rbd,nominal,Nombre de la provincia
-cod_com_rbd,identificador,Código de la comuna
+cod_com_rbd,nominal,Código de la comuna
 nom_com_rbd,nominal,Nombre de la comuna
 cod_deprov_rbd,nominal,Código departamento provincial
 nom_deprov_rbd,nominal,Nombre departamento provincial
@@ -36,7 +36,7 @@ palu_eda_ade_lect4b_rbd,continua,Porcentaje de alumnos en Nivel Adecuado (Lectur
 palu_eda_ins_mate4b_rbd,continua,Porcentaje de alumnos en Nivel Insuficiente (Matemática)
 palu_eda_ele_mate4b_rbd,continua,Porcentaje de alumnos en Nivel Elemental (Matemática)
 palu_eda_ade_mate4b_rbd,continua,Porcentaje de alumnos en Nivel Adecuado (Matemática)
-noaplica,binaria,Indicador de no aplicación del instrumento
+noaplica,nominal,Indicador de no aplicación del instrumento
 codigo_bbdd,nominal,Código de versión de la base de datos
 fecha_bbdd,fecha,Fecha de publicación de la base de datos
 grado,nominal,Grado evaluado (4b)
