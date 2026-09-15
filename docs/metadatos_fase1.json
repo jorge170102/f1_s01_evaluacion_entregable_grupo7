@@ -4,12 +4,12 @@
   "fase": "F1",
   "fecha_ejecucion": "2026-09-14",
   "semilla": 42,
-  "python": "3.14.7",
+  "python": "3.12.6",
   "sistema_operativo": "Windows 11",
-  "interprete": "C:\\Users\\jorge\\f1_s01_evaluacion_entregable_grupo7\\.venv\\Scripts\\python.exe",
-  "entorno_virtual": true,
+  "interprete": "c:\\Users\\crist\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+  "entorno_virtual": false,
   "dependencias": {
-    "numpy": "2.5.2",
+    "numpy": "2.5.3",
     "pandas": "3.0.5",
     "matplotlib": "3.11.1",
     "seaborn": "0.13.2"
