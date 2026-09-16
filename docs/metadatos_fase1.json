@@ -1,17 +1,23 @@
 {
   "proyecto": "Caracterización e Inequidad en los Resultados Académicos del SIMCE 4º Básico en Chile",
   "grupo": "Grupo 7",
+  "integrantes": [
+    "Felipe Palma Barrientos",
+    "Vicente Aguilar Rojas",
+    "Cristian Grandon Grandon",
+    "Jorge Gutierrez Jaramillo"
+  ],
   "fase": "F1",
-  "fecha_ejecucion": "2026-09-14",
+  "fecha_ejecucion": "2026-09-16",
   "semilla": 42,
-  "python": "3.12.6",
-  "sistema_operativo": "Windows 11",
-  "interprete": "c:\\Users\\crist\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+  "python": "3.10.8",
+  "sistema_operativo": "Windows 10",
+  "interprete": "c:\\Python310\\python.exe",
   "entorno_virtual": false,
   "dependencias": {
-    "numpy": "2.5.3",
-    "pandas": "3.0.5",
-    "matplotlib": "3.11.1",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.9",
     "seaborn": "0.13.2"
   },
   "dataset": {
@@ -20,17 +26,6 @@
     "url": "https://informacionestadistica.agenciaeducacion.cl/#/bases",
     "filas": 7143,
     "columnas": 42,
-    "archivo_disponible": true,
-    "roles": {
-      "nominal": 22,
-      "continua": 12,
-      "discreta": 3,
-      "identificador": 2,
-      "alta_cardinalidad": 1,
-      "ordinal": 1,
-      "fecha": 1
-    },
-    "pct_nulos_max_variable": 92.93014139717206,
-    "licencia_abierta": null
+    "archivo_disponible": true
   }
 }

@@ -1,9 +1,18 @@
-nodo_mapa,donde_se_implementa,evidencia
-Entorno reproducible,F1 · verificar_entorno(),"Intérprete de Python, entorno virtual y versiones de librerías"
-Gestión de dependencias,F1 · requirements.txt,Archivo requirements.txt generado con las dependencias del proyecto
-Estructura del proyecto,F1 · creación de carpetas,"Carpetas data/raw, data/processed, docs, src y F1-F4"
-Fuente de datos,F1 · FICHA,Ficha del dataset SIMCE 4º Básico 2025 y fuente oficial
-Diccionario de variables,F1 · diccionario,42 variables documentadas con rol analítico y descripción
-Disponibilidad del dataset,F1 · ARCHIVO_RAW,Verificación de existencia y dimensiones del archivo SIMCE
-Control de versiones,F1 · diagnóstico Git,Versión de Git e historial reciente de commits
-Validación técnica,Sección 7 · validar_fase1(),"Comprobaciones automáticas de estructura, archivos y coherencia"
+nodo_mapa,fase,estado,evidencia
+Problemática y objetivos,F1,Implementado,"PROYECTO contiene la problemática, preguntas de investigación, objetivo general, objetivos específicos, alcance, restricciones y supuestos del proyecto."
+Entorno reproducible,F1,Implementado,"verificar_entorno(), requirements.txt y la configuración del kernel documentan el entorno técnico necesario para reproducir el proyecto."
+Fuente y calidad del dato,F1,Implementado,"FICHA, el diccionario de 42 variables y la evaluación de criterios documentan la estructura completa del archivo SIMCE original."
+Estructura y control de versiones,F1,Implementado,"La estructura F1-F4, data, docs y src, junto con el diagnóstico de Git y el historial de commits, dejan evidencia de organización y trazabilidad."
+Carga selectiva del dataset,F2,Implementado,"El F2 final carga 20 variables necesarias desde los 7.143 registros del dataset bruto, preservando sin modificaciones el archivo de data/raw/."
+Exploración y calidad inicial,F2,Implementado,"F2 diagnostica dimensiones, tipos de datos, valores ausentes, duplicados y características del dataset antes de aplicar transformaciones."
+Tratamiento de valores ausentes,F2,Implementado,"No se imputan RBD, información territorial ni puntajes SIMCE. Las variables porcentuales de estándares de aprendizaje fueron excluidas del alcance del producto analítico de F2."
+Transformación y enriquecimiento,F2,Implementado,"F2 aplica conversión controlada de tipos, procesamiento de fecha_bbdd, limpieza de textos, traducción de códigos categóricos y enriquecimiento mediante DimGeografia."
+Control de representatividad,F2,Implementado,La regla de efectividad clasifica cada establecimiento como Efectivo o No Efectivo considerando alumnos evaluados y observaciones al puntaje.
+Auditoría de exclusiones,F2,Implementado,data/processed/auditoria_filtro.csv conserva los 619 registros No Efectivos junto con su motivo de exclusión y el indicador marca_2_con_puntaje; 55 exclusiones conservan puntaje.
+Cobertura territorial,F2,Implementado,"data/processed/cobertura_regional.csv registra por región los registros originales, efectivos, no efectivos, excluidos con puntaje y cantidades de alumnos antes y después del filtro."
+Dataset analítico final,F2,Implementado,"El F2 final genera 6.524 establecimientos Efectivos y 30 variables, con una fila por RBD y la información necesaria para el análisis territorial posterior."
+Validación técnica,F1-F2,Implementado,"validar_fase1() y las validaciones del F2 comprueban integridad, reconciliación y casos normales, límite y excepción."
+Análisis descriptivo territorial,Fase posterior,Proyectado,"Comparación de puntajes promedio por región, provincia y comuna utilizando exclusivamente el dataset validado de F2."
+Análisis inferencial,Fase posterior,Proyectado,Aplicación de técnicas estadísticas para determinar si las diferencias territoriales observadas son estadísticamente significativas.
+Identificación de focos de menor desempeño,Fase posterior,Proyectado,Identificación de establecimientos y territorios con resultados inferiores a los niveles de referencia definidos durante el análisis.
+Visualización y comunicación,Fase posterior,Proyectado,"Construcción de gráficos, tablas e informe técnico para comunicar resultados, limitaciones y conclusiones."
