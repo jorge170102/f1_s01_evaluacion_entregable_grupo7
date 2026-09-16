@@ -20,7 +20,7 @@ El proyecto prepara un flujo reproducible para analizar las diferencias territor
 - **Enlace:** https://informacionestadistica.agenciaeducacion.cl/#/bases
 - **Unidad de observación:** establecimiento educacional (RBD).
 - **Base bruta:** 7.143 filas × 42 columnas.
-- **Salida F2:** 6.524 establecimientos × 33 columnas.
+- **Salida F2:** 6.524 establecimientos × 30 columnas.
 
 ## Estructura del repositorio
 
@@ -33,9 +33,9 @@ data/
   raw/
     simce4b2025_rbd_final.csv
   processed/
-    simce4b2025_matematica_efectiva.csv
-    auditoria_filtro.csv
-    cobertura_regional.csv
+    simce4b2025_matematica_efectiva_AAAAMMDDHHMM.csv
+    auditoria_filtro_AAAAMMDDHHMM.csv
+    cobertura_regional_AAAAMMDDHHMM.csv
 docs/
   diccionario_variables.csv
   evaluacion_criterios_dataset.csv
@@ -91,7 +91,7 @@ jupyter lab
 `F2/F2_Preprocesamiento.ipynb` regenera tres productos:
 
 - `data/processed/simce4b2025_matematica_efectiva.csv`: dataset principal procesado, con 6.524 establecimientos y 33 columnas.
-- `data/processed/auditoria_filtro.csv`: una fila por registro del bruto, con indicadores de ausencia de alumnos, marca excluida, disponibilidad de puntaje e inclusión final.
+- `data/processed/auditoria_filtro.csv`: una fila por registro excluido, con indicadores de ausencia de alumnos, marca excluida, disponibilidad de puntaje e inclusión final.
 - `data/processed/cobertura_regional.csv`: resumen por región con establecimientos iniciales, incluidos, excluidos, porcentaje de retención y disponibilidad de los porcentajes de niveles de aprendizaje.
 
 El notebook vuelve a leer el CSV principal después de exportarlo y compara su contenido con el DataFrame en memoria.
@@ -100,7 +100,6 @@ El notebook vuelve a leer el CSV principal después de exportarlo y compara su c
 
 Los puntajes SIMCE se mantienen en su escala original, ya que son directamente interpretables para las comparaciones territoriales planteadas. No se aplica escalamiento en F2 porque no es necesario para este objetivo.
 
-Los porcentajes `pct_insuficiente`, `pct_elemental` y `pct_adecuado` conservan sus valores ausentes. No se reemplazan por cero, ya que la ausencia de información no implica que ningún estudiante pertenezca al nivel correspondiente. Tampoco se eliminan esos establecimientos cuando mantienen puntaje y ubicación válidos para la pregunta principal.
 
 La regla de filtrado actual conserva registros con alumnos evaluados mayores a cero y excluye las marcas `[1, 2, 3, 4]`. Esta lista corresponde al criterio de trabajo actual del equipo. Su significado institucional debe confirmarse con las glosas oficiales de la base SIMCE 2025 antes de atribuir a cada código una interpretación específica. Actualmente existen 55 establecimientos con puntaje disponible que son excluidos por esta regla, por lo que su efecto permanece visible mediante `auditoria_filtro.csv`.
 
