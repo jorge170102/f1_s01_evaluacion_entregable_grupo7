@@ -4,7 +4,7 @@
 
 ## Integrantes
 - Felipe Palma Barrientos
-- Vicente Aguilar Rojas
+- Vicente Aguila Rojas
 - Cristian Grandon Grandon
 - Jorge Gutierrez Jaramillo
 
