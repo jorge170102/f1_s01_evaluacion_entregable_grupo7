@@ -66,7 +66,7 @@ seaborn==0.13.2
 Desde la raíz del repositorio, en PowerShell:
 
 ```powershell
-python -m venv .venv
+py -3.14 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install --upgrade pip
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -m pip check
@@ -78,19 +78,19 @@ Seleccionar el kernel `SIMCE Grupo 7 (.venv)` y ejecutar, desde un kernel reinic
 
 En macOS/Linux, después de crear el entorno se activa con:
 
-```bash
+python3.14 -m venv .venv
 source .venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
-pip check
-jupyter lab
-```
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m pip check
+python -m ipykernel install --sys-prefix --name simce-grupo7 --display-name "SIMCE Grupo 7 (.venv)"
+python -m jupyter lab
 
 ## Productos de la Fase 2
 
 `F2/F2_Preprocesamiento.ipynb` regenera tres productos:
 
-- `data/processed/simce4b2025_matematica_efectiva.csv`: dataset principal procesado, con 6.524 establecimientos y 33 columnas.
+- `data/processed/simce4b2025_matematica_efectiva.csv`: dataset principal procesado, con 6.524 establecimientos y 30 columnas.
 - `data/processed/auditoria_filtro.csv`: una fila por registro excluido, con indicadores de ausencia de alumnos, marca excluida, disponibilidad de puntaje e inclusión final.
 - `data/processed/cobertura_regional.csv`: resumen por región con establecimientos iniciales, incluidos, excluidos, porcentaje de retención y disponibilidad de los porcentajes de niveles de aprendizaje.
 
@@ -105,17 +105,22 @@ La regla de filtrado actual conserva registros con alumnos evaluados mayores a c
 
 ## Validación técnica
 
+## Validación técnica
+
 F2 valida, entre otros elementos:
 
-- unicidad del RBD;
-- alumnos evaluados positivos y enteros;
-- puntajes presentes y finitos;
-- año 2025 y grado 4b;
-- códigos y nombres territoriales completos;
-- coherencia comuna → provincia → región;
-- porcentajes dentro del rango 0–100 cuando están disponibles;
-- suma aproximada de 100% para filas con los tres porcentajes presentes;
-- generación y relectura de los archivos exportados.
+- que el dataset final no se encuentre vacío;
+- unicidad y presencia del RBD;
+- alumnos evaluados mayores a cero;
+- presencia del puntaje promedio;
+- año, grado y asignatura esperados;
+- información territorial completa;
+- coherencia de las claves geográficas;
+- fecha de la base válida;
+- ausencia de columnas duplicadas;
+- reconciliación entre registros originales, efectivos y excluidos;
+- reconciliación de la cobertura regional;
+- ausencia en el producto final de variables eliminadas del alcance.
 
 Además, el notebook contiene pruebas controladas para casos normales, límite y excepciones, sin modificar el dataset final.
 
