@@ -3,12 +3,12 @@
   "grupo": "Grupo 7",
   "integrantes": [
     "Felipe Palma Barrientos",
-    "Vicente Aguilar Rojas",
+    "Vicente Aguila Rojas",
     "Cristian Grandon Grandon",
     "Jorge Gutierrez Jaramillo"
   ],
   "fase": "F1",
-  "fecha_ejecucion": "2026-09-16",
+  "fecha_ejecucion": "2026-09-22",
   "semilla": 42,
   "python": "3.10.8",
   "sistema_operativo": "Windows 10",

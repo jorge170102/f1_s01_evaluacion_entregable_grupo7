@@ -70,7 +70,7 @@ La estructura separa los datos originales de los resultados procesados y mantien
 
 ## Entorno y dependencias
 
-El proyecto se ejecuta con **Python 3.14.7**.
+El proyecto se ejecuta con **Python 3.10.8**.
 Las dependencias oficiales se encuentran fijadas en `requirements.txt`.
 
 ```text
