@@ -239,12 +239,11 @@ La trazabilidad se mantiene mediante el historial Git y los mensajes de commit.
 
 | Integrante | Identidad(es) Git observadas | Contribuciones trazables en el historial |
 |---|---|---|
-| Jorge Gutierrez Jaramillo | `jorge170102`, `Jorge Gutierrez` | Modularización del pipeline F2 en `src/`, incorporación de pruebas, correcciones de rutas y reproducibilidad, documentación/README. |
+| Jorge Gutierrez Jaramillo | `jorge170102`, `Jorge Gutierrez`, `TIC Cuarto Turno` | Modularización del pipeline F2 en `src/`, incorporación de pruebas, correcciones de rutas y reproducibilidad, documentación/README. |
 | Vicente Aguila Rojas | `strongercoelt` | Arquitectura POO, documentación automática de arquitectura, validación, eficiencia, sensibilidad y decisión de normalización/escalamiento en F3. |
 | Cristian Grandon Grandon | `Crisrgg` | Creación e integración del notebook F3, pipeline, evidencia POO, diseño estructurado y recursividad. |
 | Felipe Palma Barrientos | `Felipe Palma`, `felipeandrespalmabarrientos-cpu` | Mejoras F2, minutas, verificación final, documentación/trazabilidad y correcciones de F3. |
 
-> Existe además la identidad Git `TIC Cuarto Turno`, utilizada en dos commits de corrección de F3. Antes de la entrega debe asociarse explícitamente al integrante correspondiente mediante `.mailmap` o documentarse en esta sección para evitar ambigüedad de autoría.
 
 ## Trazabilidad
 
