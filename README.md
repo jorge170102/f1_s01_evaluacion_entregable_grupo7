@@ -1,6 +1,8 @@
-# Caracterización e Inequidad en los Resultados Académicos del SIMCE 4º Básico en Chile
+# Caracterización e inequidad en los resultados académicos del SIMCE 4.º Básico en Chile
 
-**Grupo:** Grupo 7
+**Curso:** MCDI500 — Programación para la Ciencia de Datos  
+**Grupo:** 7  
+**Fase actual:** F3 — Núcleo algorítmico, eficiencia e implementación orientada a objetos
 
 ## Integrantes
 
@@ -11,29 +13,29 @@
 
 ## Propósito del proyecto
 
-El proyecto prepara un flujo reproducible para analizar las diferencias territoriales en los puntajes promedio de Matemática del SIMCE 2025 de 4º Básico. La unidad de análisis es el establecimiento educacional identificado por RBD.
+El proyecto construye un flujo reproducible para preparar y analizar los resultados de Matemática del SIMCE 2025 de 4.º Básico a nivel de establecimiento educacional (RBD), manteniendo trazabilidad de las transformaciones y de los registros excluidos.
 
-Las fases F1 y F2 definen la problemática, documentan la fuente y construyen una base comparable y validada. Las comparaciones descriptivas, análisis estadísticos y conclusiones territoriales corresponden a fases posteriores del proyecto.
+F1 define el problema y documenta la fuente; F2 implementa y valida el preprocesamiento; F3 conserva las reglas metodológicas ya validadas y evoluciona el núcleo del proyecto hacia una arquitectura modular orientada a objetos, incorporando recursividad aplicada, validaciones reejecutables, comparación de implementaciones y mediciones reproducibles de eficiencia.
 
-## Datos
+## Datos y continuidad entre fases
 
-- **Dataset:** Resultados prueba SIMCE 4º Básico 2025 por Establecimiento.
 - **Fuente:** Agencia de Calidad de la Educación.
-- **Portal:** Bases de datos públicas de la Agencia de Calidad de la Educación.
-- **Enlace:** https://informacionestadistica.agenciaeducacion.cl/#/bases
-- **Unidad de observación:** Un establecimiento educacional (RBD).
-- **Base bruta:** 7.143 filas × 42 columnas.
-- **Salida F2:** 6.524 establecimientos × 30 columnas.
+- **Dataset:** Resultados prueba SIMCE 4.º Básico 2025 por establecimiento.
+- **Unidad de análisis:** establecimiento educacional identificado por RBD.
+- **Base de origen:** 7.143 registros × 42 variables.
+- **Producto analítico F2/F3:** 6.524 establecimientos × 30 variables.
+- **Registros mantenidos para auditoría:** 619.
+- **Dimensión geográfica:** 346 comunas.
+
+La regla de efectividad definida en F2 se conserva en F3: un establecimiento se considera efectivo cuando presenta alumnos evaluados mayores a cero y no posee observaciones asociadas al puntaje. Los registros excluidos no se eliminan de la trazabilidad, sino que permanecen en la salida de auditoría.
 
 ## Estructura del repositorio
 
 ```text
 f1_s01_evaluacion_entregable_grupo7/
 │
-├── .gitignore
 ├── README.md
 ├── requirements.txt
-├── informe_dataset_simce.md
 │
 ├── F1/
 │   ├── F1_Definicion.ipynb
@@ -44,56 +46,55 @@ f1_s01_evaluacion_entregable_grupo7/
 │   └── F2_Preprocesamiento.ipynb
 │
 ├── F3/
-├── F4/
+│   ├── F3_Nucleo_Algoritmico.ipynb
+│   └── NucleoF3.md
 │
-├── data/
-│   ├── raw/
-│   │   └── simce4b2025_rbd_final.csv
-│   └── processed/
-│       ├── simce4b2025_matematica_efectiva_AAAAMMDDHHMM.csv
-│       ├── auditoria_filtro_AAAAMMDDHHMM.csv
-│       └── cobertura_regional_AAAAMMDDHHMM.csv
+├── src/
+│   ├── configuracion.py
+│   ├── carga.py
+│   ├── diagnostico.py
+│   ├── transformacion.py
+│   ├── auditoria.py
+│   ├── validacion.py
+│   ├── exportacion.py
+│   ├── poo.py
+│   ├── algoritmo.py
+│   └── arquitectura.py
+│
+├── tests/
+│   └── test_regla_efectividad.py
 │
 ├── docs/
+│   ├── arquitectura_f3.md
 │   ├── diccionario_variables.csv
 │   ├── evaluacion_criterios_dataset.csv
 │   ├── metadatos_fase1.json
 │   └── vinculacion_mapa_conceptual.csv
 │
-├── Minutas/
-└── src/
+├── data/
+│   ├── raw/
+│   │   └── simce4b2025_rbd_final.csv
+│   └── processed/
+│       ├── simce4b2025_matematica_efectiva_*.csv
+│       ├── auditoria_filtro_*.csv
+│       └── cobertura_regional_*.csv
+│
+└── Minutas/
 ```
 
-La estructura separa los datos originales de los resultados procesados y mantiene organizadas las fases, la documentación y los archivos de apoyo. Esto facilita el trabajo colaborativo y la trazabilidad del proyecto.
+La lógica reutilizable se mantiene en `src/`; los notebooks concentran la ejecución, la evidencia y la documentación del proceso; `tests/` contiene pruebas reejecutables y `docs/` mantiene documentación técnica y de trazabilidad.
 
-`data/raw/` conserva la fuente original sin modificaciones, `data/processed/` recibe los productos generados por F2 y `docs/` concentra los artefactos de documentación y validación. `src/` queda disponible para componentes reutilizables de fases posteriores.
+## Entorno reproducible
 
-## Entorno y dependencias
+La última ejecución registrada de F3 utiliza:
 
-El proyecto se ejecuta con **Python 3.10.8**.
-Las dependencias oficiales se encuentran fijadas en `requirements.txt`.
+- Python 3.14.7
+- pandas 3.0.5
+- NumPy 2.5.2
 
-```text
-ipykernel==7.3.0
-jupyterlab==4.6.3
-matplotlib==3.11.1
-notebook==7.6.2
-numpy==2.5.2
-pandas==3.0.5
-seaborn==0.13.2
-```
-
-La semilla definida para reproducibilidad es `42`.
-
-## Clonar repositorio
-
-## git clone https://github.com/jorge170102/f1_s01_evaluacion_entregable_grupo7.git
-
-## Reproducción del proyecto
+Las dependencias se encuentran declaradas en `requirements.txt`.
 
 ### Windows (PowerShell)
-
-Desde la raíz del repositorio:
 
 ```powershell
 py -3.14 -m venv .venv
@@ -106,8 +107,6 @@ py -3.14 -m venv .venv
 
 ### macOS / Linux
 
-Desde la raíz del repositorio:
-
 ```bash
 python3.14 -m venv .venv
 source .venv/bin/activate
@@ -118,73 +117,149 @@ python -m ipykernel install --sys-prefix --name simce-grupo7 --display-name "SIM
 python -m jupyter lab
 ```
 
-Una vez iniciado Jupyter, seleccionar el kernel `SIMCE Grupo 7 (.venv)` y ejecutar, desde un kernel reiniciado:
+## Orden de ejecución
+
+Desde un kernel reiniciado, ejecutar en este orden:
 
 1. `F1/F1_Definicion.ipynb`
 2. `F2/F2_Preprocesamiento.ipynb`
+3. `F3/F3_Nucleo_Algoritmico.ipynb`
 
-## Productos de la Fase 2
+Para cada notebook se recomienda utilizar **Restart Kernel + Run All Cells** y guardar posteriormente las salidas.
 
-`F2/F2_Preprocesamiento.ipynb` genera tres productos principales:
+Las pruebas automatizadas se pueden ejecutar desde la raíz con:
 
-- `data/processed/simce4b2025_matematica_efectiva_AAAAMMDDHHMM.csv`: dataset principal procesado, con 6.524 establecimientos y 30 columnas.
-- `data/processed/auditoria_filtro_AAAAMMDDHHMM.csv`: contiene los 619 registros excluidos junto con la información necesaria para revisar el motivo de exclusión.
-- `data/processed/cobertura_regional_AAAAMMDDHHMM.csv`: resume por región los registros originales, efectivos y no efectivos, además de los alumnos asociados antes y después del filtrado.
+```bash
+python -m unittest discover -s tests -p "test_*.py" -v
+```
 
-La marca `AAAAMMDDHHMM` corresponde a la fecha y hora de cada ejecución.
+## F2 — Preprocesamiento validado
 
-Después de exportar el dataset principal, F2 vuelve a leer el CSV y compara su contenido con el DataFrame en memoria mediante `pd.testing.assert_frame_equal`.
+F2 implementa la obtención, limpieza, transformación y validación del dataset. Entre sus controles se encuentran:
 
-## Decisiones de preprocesamiento
-
-Los puntajes SIMCE se mantienen en su escala original porque son directamente interpretables para las comparaciones territoriales planteadas.
-
-En F2 no se aplica normalización ni escalamiento porque en esta etapa no existe un algoritmo que requiera trabajar con variables numéricas en una escala común. Esta decisión evita aplicar transformaciones antes de definir las técnicas de análisis posteriores.
-
-No se imputan RBD, información geográfica ni puntajes faltantes, porque hacerlo podría incorporar identidad, ubicación o rendimiento que no existe en la fuente original.
-
-Los posibles valores atípicos se utilizan como diagnóstico y no se eliminan automáticamente, ya que un establecimiento con un resultado extremo o una cantidad elevada de estudiantes puede representar una observación válida.
-
-La regla de efectividad conserva establecimientos con alumnos evaluados mayores a cero y sin observaciones asociadas al puntaje. Los registros que no cumplen la regla se mantienen en la auditoría.
-
-Existen 55 registros no efectivos que conservan puntaje, incluyendo los casos identificados mediante `marca_2_con_puntaje`.
-
-## Validación técnica
-
-F2 comprueba, entre otros elementos:
-
-- que el dataset final no esté vacío;
-- asignatura y efectividad esperadas;
-- alumnos evaluados mayores a cero;
-- presencia y unicidad del RBD;
-- presencia del puntaje promedio;
-- información geográfica completa;
-- fecha de la base válida;
-- ausencia de columnas duplicadas;
+- conversión explícita de tipos;
+- limpieza y estandarización de variables textuales;
+- incorporación de categorías documentadas;
+- enriquecimiento geográfico con validación de cardinalidad;
+- aplicación de la regla de efectividad;
+- auditoría de registros no efectivos;
 - reconciliación entre registros originales, efectivos y auditados;
-- reconciliación de la cobertura regional;
-- ausencia en el producto final de variables retiradas del alcance.
+- validación de unicidad del RBD;
+- controles sobre puntaje, fecha, geografía y estructura final.
 
-Además, el notebook incluye pruebas controladas para:
+Los productos principales son el dataset analítico, la auditoría de exclusiones y la cobertura regional.
 
-- un caso normal;
-- un caso límite sin alumnos evaluados;
-- un registro con observación;
-- un registro con marca 2 y puntaje disponible;
-- un código desconocido que debe generar una excepción.
+## F3 — Núcleo algorítmico
 
-## Alcance y limitaciones
+F3 conserva las reglas de F2 y reorganiza su ejecución mediante componentes especializados.
 
-F1 y F2 preparan una base reproducible, consistente y documentada para las fases posteriores.
+### Programación orientada a objetos
 
-Estas fases no establecen causalidad entre territorio y rendimiento y no determinan por sí solas dónde asignar recursos educativos.
+`src/poo.py` implementa:
 
-Las comparaciones territoriales, pruebas de significancia, visualizaciones y conclusiones analíticas corresponden a fases posteriores.
+- `Transformador`: clase abstracta que define la interfaz común.
+- `TransformadorTipos`.
+- `TransformadorTextos`.
+- `TransformadorCategorias`.
+- `TransformadorGeografia`.
+- `TransformadorEfectividad`.
+- `PipelineSIMCE`: compone y ejecuta los transformadores de forma secuencial.
 
-Los registros con observaciones asociadas a `marca_mate4b_rbd` permanecen identificados en la auditoría para conservar la trazabilidad y permitir su revisión.
+La arquitectura evidencia herencia, polimorfismo y encapsulamiento. El pipeline utiliza el contrato común `transformar()` y mantiene internamente sus pasos y su registro de ejecución.
+
+### Algoritmos, recursividad y eficiencia
+
+`src/algoritmo.py` contiene:
+
+- `aplanar_recursivo`;
+- `construir_jerarquia_geografica`;
+- `validar_geografia_recursiva`;
+- `enriquecer_geografia_merge`;
+- `enriquecer_geografia_diccionario`;
+- `medir`.
+
+La recursividad se aplica a estructuras anidadas y a la validación de la jerarquía territorial Región → Provincia → Comuna.
+
+Para eficiencia se comparan dos implementaciones funcionalmente equivalentes del enriquecimiento geográfico:
+
+1. `pandas.merge`;
+2. búsqueda mediante diccionario de clave geográfica compuesta.
+
+Las mediciones utilizan `time.perf_counter()` para tiempo y `tracemalloc` para memoria pico. También se evalúa el costo/beneficio de `validate="many_to_one"` y el crecimiento con diferentes tamaños de entrada.
+
+### Arquitectura
+
+`src/arquitectura.py` genera una tabla de arquitectura directamente desde las clases del proyecto mediante introspección. La documentación complementaria se encuentra en `docs/arquitectura_f3.md`.
+
+### Sensibilidad y escalamiento
+
+El notebook F3 incorpora un análisis de sensibilidad sobre la regla de efectividad, manteniendo separados los escenarios experimentales de la regla metodológica principal.
+
+Los puntajes se conservan en su escala original. En esta fase no se aplica normalización o escalamiento porque el núcleo actual utiliza reglas lógicas, joins, mapeos, validaciones y agregaciones, y no un algoritmo que requiera distancias o variables en una escala común.
+
+## Reproducibilidad y validación
+
+La ejecución F3 registra:
+
+- 7.143 registros de origen;
+- 6.524 registros efectivos;
+- 619 registros auditados;
+- 346 comunas en la dimensión geográfica;
+- ejecución completa de las celdas del notebook;
+- controles de equivalencia entre implementaciones antes de interpretar las mediciones;
+- validaciones finales mediante `assert` y pruebas reejecutables.
+
+La comparación de eficiencia no modifica las reglas metodológicas: primero se comprueba la equivalencia de las salidas y luego se comparan tiempo y memoria.
+
+## Historial de evolución F3
+
+El desarrollo de F3 se incorporó de forma incremental. Entre los commits representativos se encuentran:
+
+- `e6d5945` / `ec45620`: creación del cuaderno F3.
+- `1d158e8`: incorporación de arquitectura POO.
+- `b541bcd`: algoritmos, recursividad y medición reproducible.
+- `ca7559b`: evidencia de POO.
+- `7e57cc5`: flujo y diseño estructurado.
+- `f540c44`: recursividad aplicada.
+- `f0a1e45`: validación técnica y pruebas reejecutables.
+- `b7175b9`: eficiencia y optimización.
+- `974c707`: análisis del costo/beneficio de `validate="many_to_one"`.
+- `79cc5ab`: crecimiento con el tamaño.
+- `c9d2986`: análisis de sensibilidad.
+- `4a885e7`: decisión sobre normalización y escalamiento.
+- `e9d85c3`: documentación de arquitectura y trazabilidad.
+- `16c8e6e`: verificación final de F3.
+- `272ce20`, `0e98765` y `913a925`: correcciones de F3.
+
+Esto permite seguir la evolución desde el pipeline funcional de F2 hasta la arquitectura modular y el núcleo algorítmico de F3.
+
+## Contribuciones individuales
+
+La trazabilidad se mantiene mediante el historial Git y los mensajes de commit.
+
+| Integrante | Identidad(es) Git observadas | Contribuciones trazables en el historial |
+|---|---|---|
+| Jorge Gutierrez Jaramillo | `jorge170102`, `Jorge Gutierrez` | Modularización del pipeline F2 en `src/`, incorporación de pruebas, correcciones de rutas y reproducibilidad, documentación/README. |
+| Vicente Aguila Rojas | `strongercoelt` | Arquitectura POO, documentación automática de arquitectura, validación, eficiencia, sensibilidad y decisión de normalización/escalamiento en F3. |
+| Cristian Grandon Grandon | `Crisrgg` | Creación e integración del notebook F3, pipeline, evidencia POO, diseño estructurado y recursividad. |
+| Felipe Palma Barrientos | `Felipe Palma`, `felipeandrespalmabarrientos-cpu` | Mejoras F2, minutas, verificación final, documentación/trazabilidad y correcciones de F3. |
+
+> Existe además la identidad Git `TIC Cuarto Turno`, utilizada en dos commits de corrección de F3. Antes de la entrega debe asociarse explícitamente al integrante correspondiente mediante `.mailmap` o documentarse en esta sección para evitar ambigüedad de autoría.
 
 ## Trazabilidad
 
-El repositorio mantiene historial Git, notebooks ejecutables, documentación en `docs/`, minutas de trabajo, archivos de auditoría y productos procesados.
+La relación entre definición del problema, preprocesamiento, arquitectura y evidencia se mantiene mediante:
 
-La relación entre el mapa conceptual, F1, F2 y las fases posteriores se registra en `docs/vinculacion_mapa_conceptual.csv`.
+- historial de commits;
+- notebooks ejecutables;
+- funciones reutilizables en `src/`;
+- pruebas en `tests/`;
+- documentación de arquitectura en `docs/`;
+- minutas de trabajo;
+- productos de auditoría y cobertura.
+
+El objetivo es que cada decisión relevante pueda rastrearse desde el informe y el notebook hasta el código y su historial de versiones.
+
+## Alcance
+
+F3 consolida el núcleo de procesamiento, su arquitectura y la evidencia de eficiencia. No establece causalidad entre territorio y rendimiento ni reemplaza las fases posteriores de análisis estadístico e interpretación territorial.
