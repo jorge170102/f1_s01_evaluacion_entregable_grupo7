@@ -1,17 +1,14 @@
 # Arquitectura del proyecto — Fase 3
 
-## 1. Descripción general
+## 1. Propósito de la arquitectura
 
-Durante la Fase 3, el pipeline desarrollado y validado en la Fase 2
-evoluciona hacia una arquitectura modular orientada a objetos.
+La Fase 3 reorganiza el pipeline validado en F2 hacia una arquitectura modular y orientada a objetos, manteniendo las reglas metodológicas ya definidas para el procesamiento de resultados SIMCE de Matemática de 4.º Básico 2025.
 
-La lógica reutilizable del proyecto se mantiene dentro de `src/`,
-mientras que el notebook de Fase 3 se utiliza para integrar los
-componentes, ejecutar el procesamiento, realizar mediciones de
-eficiencia y documentar los resultados.
+La lógica reutilizable se mantiene en `src/`, mientras que `F3/F3_Nucleo_Algoritmico.ipynb` funciona como capa de orquestación, ejecución, medición y evidencia.
 
-Esta separación permite evitar duplicación de código y mantener una
-estructura más organizada, mantenible y extensible.
+El objetivo de esta organización es mejorar la mantenibilidad, trazabilidad y extensibilidad del proyecto sin modificar arbitrariamente el comportamiento validado en F2.
+
+---
 
 ## 2. Estructura del proyecto
 
@@ -21,7 +18,8 @@ proyecto/
 ├── F2/
 │   └── F2_Preprocesamiento.ipynb
 ├── F3/
-│   └── F3_Nucleo_Algoritmico.ipynb
+│   ├── F3_Nucleo_Algoritmico.ipynb
+│   └── NucleoF3.md
 ├── src/
 │   ├── configuracion.py
 │   ├── carga.py
@@ -31,7 +29,13 @@ proyecto/
 │   ├── validacion.py
 │   ├── exportacion.py
 │   ├── poo.py
-│   └── algoritmos.py
+│   ├── algoritmo.py
+│   └── arquitectura.py
 ├── tests/
-└── docs/
-    └── arquitectura_f3.md
+│   ├── __init__.py
+│   └── test_regla_efectividad.py
+├── docs/
+│   └── arquitectura_f3.md
+└── data/
+    ├── raw/
+    └── processed/
