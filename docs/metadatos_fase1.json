@@ -8,16 +8,16 @@
     "Jorge Gutierrez Jaramillo"
   ],
   "fase": "F1",
-  "fecha_ejecucion": "2026-09-22",
+  "fecha_ejecucion": "2026-09-26",
   "semilla": 42,
-  "python": "3.10.8",
-  "sistema_operativo": "Windows 10",
-  "interprete": "c:\\Python310\\python.exe",
-  "entorno_virtual": false,
+  "python": "3.14.7",
+  "sistema_operativo": "Windows 11",
+  "interprete": "c:\\Users\\emper\\f1_s01_evaluacion_entregable_grupo7\\.venv\\Scripts\\python.exe",
+  "entorno_virtual": true,
   "dependencias": {
-    "numpy": "2.2.6",
-    "pandas": "2.3.3",
-    "matplotlib": "3.10.9",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "matplotlib": "3.11.1",
     "seaborn": "0.13.2"
   },
   "dataset": {
