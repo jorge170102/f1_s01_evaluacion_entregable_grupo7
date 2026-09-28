@@ -13,7 +13,7 @@
 
 El proyecto prepara un flujo reproducible para analizar las diferencias territoriales en los puntajes promedio de Matemática del SIMCE 2025 de 4º Básico. La unidad de análisis es el establecimiento educacional identificado por RBD.
 
-Las fases F1 y F2 definen la problemática, documentan la fuente y construyen una base comparable y validada. Las comparaciones descriptivas, análisis estadísticos y conclusiones territoriales corresponden a fases posteriores del proyecto.
+Las fases F1 y F2 definen la problemática, documentan la fuente y construyen una base comparable y validada. La Fase 3 reorganiza este pipeline mediante código modular, programación orientada a objetos, validaciones reproducibles y mediciones de eficiencia, conservando el producto analítico obtenido en F2. Las comparaciones descriptivas, análisis estadísticos y conclusiones territoriales corresponden a fases posteriores del proyecto.
 
 ## Datos
 
@@ -31,6 +31,7 @@ Las fases F1 y F2 definen la problemática, documentan la fuente y construyen un
 f1_s01_evaluacion_entregable_grupo7/
 │
 ├── .gitignore
+├── .mailmap
 ├── README.md
 ├── requirements.txt
 ├── informe_dataset_simce.md
@@ -44,7 +45,8 @@ f1_s01_evaluacion_entregable_grupo7/
 │   └── F2_Preprocesamiento.ipynb
 │
 ├── F3/
-├── F4/
+│   ├── F3_Nucleo_Algoritmico.ipynb
+│   └── NucleoF3.md
 │
 ├── data/
 │   ├── raw/
@@ -55,18 +57,31 @@ f1_s01_evaluacion_entregable_grupo7/
 │       └── cobertura_regional_AAAAMMDDHHMM.csv
 │
 ├── docs/
+│   ├── arquitectura_f3.md
 │   ├── diccionario_variables.csv
 │   ├── evaluacion_criterios_dataset.csv
 │   ├── metadatos_fase1.json
 │   └── vinculacion_mapa_conceptual.csv
 │
 ├── Minutas/
-└── src/
+├── src/
+│   ├── configuracion.py
+│   ├── carga.py
+│   ├── transformacion.py
+│   ├── auditoria.py
+│   ├── validacion.py
+│   ├── poo.py
+│   ├── algoritmo.py
+│   └── arquitectura.py
+│
+└── tests/
+    ├── __init__.py
+    └── test_regla_efectividad.py
 ```
 
 La estructura separa los datos originales de los resultados procesados y mantiene organizadas las fases, la documentación y los archivos de apoyo. Esto facilita el trabajo colaborativo y la trazabilidad del proyecto.
 
-`data/raw/` conserva la fuente original sin modificaciones, `data/processed/` recibe los productos generados por F2 y `docs/` concentra los artefactos de documentación y validación. `src/` queda disponible para componentes reutilizables de fases posteriores.
+`data/raw/` conserva la fuente original sin modificaciones, `data/processed/` contiene los productos analíticos y de auditoría, y `docs/` concentra la documentación técnica. En F3, `src/` contiene los componentes reutilizables del pipeline, `tests/` reúne las pruebas automatizadas y `F3/` contiene el notebook que integra y documenta la ejecución del núcleo algorítmico.
 
 ## Entorno y dependencias
 
@@ -122,6 +137,9 @@ Una vez iniciado Jupyter, seleccionar el kernel `SIMCE Grupo 7 (.venv)` y ejecut
 
 1. `F1/F1_Definicion.ipynb`
 2. `F2/F2_Preprocesamiento.ipynb`
+3. `F3/F3_Nucleo_Algoritmico.ipynb`
+
+Para verificar específicamente la Fase 3, reiniciar el kernel y ejecutar todas las celdas de `F3/F3_Nucleo_Algoritmico.ipynb` en orden. El notebook importa los módulos desde `src/`, ejecuta las pruebas disponibles en `tests/` y verifica la continuidad del producto analítico respecto de F2.
 
 ## Productos de la Fase 2
 
@@ -134,6 +152,19 @@ Una vez iniciado Jupyter, seleccionar el kernel `SIMCE Grupo 7 (.venv)` y ejecut
 La marca `AAAAMMDDHHMM` corresponde a la fecha y hora de cada ejecución.
 
 Después de exportar el dataset principal, F2 vuelve a leer el CSV y compara su contenido con el DataFrame en memoria mediante `pd.testing.assert_frame_equal`.
+
+## Avance de la Fase 3
+
+`F3/F3_Nucleo_Algoritmico.ipynb` integra el avance técnico de F3 sobre el pipeline validado en F2. La fase incorpora:
+
+- modularización del código reutilizable en `src/`;
+- programación orientada a objetos mediante `Transformador` y `PipelineSIMCE`;
+- pruebas automatizadas y controles de integridad;
+- recursividad aplicada a la estructura geográfica;
+- comparación de eficiencia entre `pandas.merge` y una alternativa basada en diccionario;
+- documentación de arquitectura y trazabilidad del proceso.
+
+La reorganización conserva el producto analítico de F2: 6.524 establecimientos y 30 variables. La equivalencia entre ambos productos se verifica mediante `pd.testing.assert_frame_equal`.
 
 ## Decisiones de preprocesamiento
 
@@ -175,7 +206,7 @@ Además, el notebook incluye pruebas controladas para:
 
 ## Alcance y limitaciones
 
-F1 y F2 preparan una base reproducible, consistente y documentada para las fases posteriores.
+F1, F2 y F3 preparan una base reproducible, consistente y documentada para las fases posteriores.
 
 Estas fases no establecen causalidad entre territorio y rendimiento y no determinan por sí solas dónde asignar recursos educativos.
 
