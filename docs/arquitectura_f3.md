@@ -1764,7 +1764,7 @@ Run All Cells
 guardar notebook
 ```
 
-La versión almacenada en el repositorio mantiene las 16 celdas de código ejecutadas secuencialmente.
+La versión almacenada en el repositorio mantiene las 17 celdas de código ejecutadas secuencialmente.
 
 ---
 
@@ -2092,7 +2092,7 @@ La evidencia obtenida confirma que la reorganización mantiene:
 346 comunas
 14/14 validaciones
 5/5 pruebas automatizadas
-16/16 celdas de código ejecutadas
+17/17 celdas de código ejecutadas
 ```
 
 y finaliza con una verificación explícita de que el núcleo modular se encuentra operativo.
@@ -2112,6 +2112,11 @@ La arquitectura y las decisiones técnicas se apoyan en las fuentes utilizadas p
 - literatura académica reciente sobre reproducibilidad de notebooks.
 
 Las referencias bibliográficas completas se encuentran en el informe institucional de Fase 3.
+
+# 58. Evolución de la arquitectura y trazabilidad del trabajo
+La arquitectura de F3 no fue definida como una reorganización aislada al final del desarrollo, sino que responde a la evolución registrada en las minutas de trabajo del equipo. Durante las primeras revisiones se identificó que el procesamiento de F2 concentraba distintas responsabilidades dentro del notebook. A partir de esta observación se decidió extraer la lógica reutilizable hacia src/, centralizar catálogos y parámetros en configuracion.py, separar la auditoría de los controles de validación y trasladar las pruebas de reglas críticas a tests/.
+En el inicio de F3, las minutas registran como objetivo explícito preservar los resultados obtenidos en F2 mientras se mejoraba la organización del código. Esta decisión explica por qué la refactorización mantiene las reglas funcionales existentes y verifica posteriormente la igualdad entre los productos de F2 y F3.
+La evolución posterior incorporó una capa de coordinación orientada a objetos mediante Transformador y PipelineSIMCE, además de componentes específicos para recursividad, eficiencia y documentación de arquitectura. De esta forma, el historial del proyecto muestra una transición desde un procesamiento principalmente organizado en notebook hacia una arquitectura modular, verificable y reutilizable, sin modificar arbitrariamente las decisiones metodológicas ya validadas.
 
 ---
 

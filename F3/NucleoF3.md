@@ -95,4 +95,4 @@ Las pruebas también pueden ejecutarse mediante:
 python -m unittest discover -s tests -p "test_*.py" -v
 ```
 
-La versión almacenada del notebook F3 conserva sus 16 celdas de código ejecutadas secuencialmente y finaliza con la verificación del núcleo modular.
+La versión almacenada del notebook F3 conserva sus 17 celdas de código ejecutadas secuencialmente y finaliza con la verificación del núcleo modular.

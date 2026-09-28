@@ -52,9 +52,9 @@ f1_s01_evaluacion_entregable_grupo7/
 │   ├── raw/
 │   │   └── simce4b2025_rbd_final.csv
 │   └── processed/
-│       ├── simce4b2025_matematica_efectiva_AAAAMMDDHHMM.csv
-│       ├── auditoria_filtro_AAAAMMDDHHMM.csv
-│       └── cobertura_regional_AAAAMMDDHHMM.csv
+│       ├── simce4b2025_matematica_efectiva.csv
+│       ├── auditoria_filtro.csv
+│       └── cobertura_regional.csv
 │
 ├── docs/
 │   ├── arquitectura_f3.md
@@ -145,11 +145,10 @@ Para verificar específicamente la Fase 3, reiniciar el kernel y ejecutar todas 
 
 `F2/F2_Preprocesamiento.ipynb` genera tres productos principales:
 
-- `data/processed/simce4b2025_matematica_efectiva_AAAAMMDDHHMM.csv`: dataset principal procesado, con 6.524 establecimientos y 30 columnas.
-- `data/processed/auditoria_filtro_AAAAMMDDHHMM.csv`: contiene los 619 registros excluidos junto con la información necesaria para revisar el motivo de exclusión.
-- `data/processed/cobertura_regional_AAAAMMDDHHMM.csv`: resume por región los registros originales, efectivos y no efectivos, además de los alumnos asociados antes y después del filtrado.
+- `data/processed/simce4b2025_matematica_efectiva.csv`: dataset principal procesado, con 6.524 establecimientos y 30 columnas.
+- `data/processed/auditoria_filtro.csv`: contiene los 619 registros excluidos junto con la información necesaria para revisar el motivo de exclusión.
+- `data/processed/cobertura_regional.csv`: resume por región los registros originales, efectivos y no efectivos, además de los alumnos asociados antes y después del filtrado.
 
-La marca `AAAAMMDDHHMM` corresponde a la fecha y hora de cada ejecución.
 
 Después de exportar el dataset principal, F2 vuelve a leer el CSV y compara su contenido con el DataFrame en memoria mediante `pd.testing.assert_frame_equal`.
 
