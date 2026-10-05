@@ -65,6 +65,10 @@ def percentil(serie, significance=3):
     valores = np.interp(s.to_numpy(), unicos, percentiles)
     return pd.Series(np.round(valores, significance), index=s.index)
 
+def percentrank_inc_excel(serie, significance=3):
+    """Alias compatible para el cálculo de percent rank utilizado en F4."""
+    return percentil(serie, significance)
+
 def resumen_criticidad(df, geo_cols, referencia):
     x=df.copy()
     x["bajo_desempeno_f4"]=(x["puntaje_promedio"]<referencia).astype(int)
